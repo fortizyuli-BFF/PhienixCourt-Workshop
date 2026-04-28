@@ -1,0 +1,15 @@
+node_modules/
+.DS_Store
+
+# Playwright / browser test artifacts
+.playwright-mcp/
+*.png
+
+# Generated booklet PDFs (rebuilt from booklet.html)
+booklet/output/
+*.pdf
+
+# Editor & OS
+.vscode/
+.idea/
+*.swp

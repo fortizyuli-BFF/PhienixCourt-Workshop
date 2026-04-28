@@ -1,0 +1,439 @@
+{
+  "_meta": {
+    "name": "Camden Digital Lifeline — orgs dataset",
+    "description": "Digital-inclusion organisations and services available to young care leavers in (or accessible from) the London Borough of Camden.",
+    "version": "0.1.0-prototype",
+    "generated": "2026-04-28",
+    "verification_legend": {
+      "verified": "Phone/website confirmed within the last 30 days. Safe to use in pilot.",
+      "needs-verification": "Details from public sources but not yet phone-confirmed. Do NOT hand to a young person without checking.",
+      "draft": "Placeholder for the prototype demo only. Likely contains errors. Not for distribution."
+    },
+    "important": "All entries in this prototype are 'draft' or 'needs-verification' status. Every detail (phone, address, hours, eligibility) must be confirmed by a human before this dataset is used with real young people."
+  },
+  "orgs": [
+    {
+      "id": "camden-libraries-tech-help",
+      "name": "Camden Libraries — Tech Help",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["devices", "wifi", "skills", "id-and-accounts"],
+      "what_they_do_plain": "Free Wi-Fi, computers you can use without booking, and free help with basics like email, Universal Credit, online forms, or learning your phone. No appointment needed for short visits.",
+      "what_to_expect": "Walk in. Ask at the front desk for tech help. They'll either help you there or book a session that day. You don't need a library card to use a computer for short visits.",
+      "eligibility_plain": "Anyone. You don't need an address, ID, or library card to drop in.",
+      "free": true,
+      "drop_in": true,
+      "appointment_required": false,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "Holborn Library",
+          "address": "32-38 Theobald's Road",
+          "postcode": "WC1X 8PA",
+          "lat": 51.5198,
+          "lon": -0.1167,
+          "region": "centre",
+          "hours_plain": "Mon–Fri 10:00–19:00, Sat 10:00–17:00"
+        },
+        {
+          "name": "Swiss Cottage Library",
+          "address": "88 Avenue Road",
+          "postcode": "NW3 3HA",
+          "lat": 51.5436,
+          "lon": -0.1746,
+          "region": "north",
+          "hours_plain": "Mon–Fri 10:00–19:00, Sat 10:00–17:00"
+        },
+        {
+          "name": "Kentish Town Library",
+          "address": "262-266 Kentish Town Road",
+          "postcode": "NW5 2AA",
+          "lat": 51.5519,
+          "lon": -0.1426,
+          "region": "north",
+          "hours_plain": "Mon–Fri 10:00–18:00, Sat 10:00–17:00"
+        },
+        {
+          "name": "Pancras Square Library",
+          "address": "5 Pancras Square",
+          "postcode": "N1C 4AG",
+          "lat": 51.5345,
+          "lon": -0.1252,
+          "region": "centre",
+          "hours_plain": "Mon–Fri 09:00–19:00, Sat 10:00–17:00"
+        }
+      ],
+      "contact": {
+        "phone": "020 7974 4444",
+        "whatsapp": null,
+        "website": "https://www.camden.gov.uk/libraries",
+        "email": null
+      },
+      "tags_situation": ["no-device", "no-data", "needs-skills", "needs-email", "needs-uc-account"],
+      "tags_safe_for": ["under-18", "no-id", "no-fixed-address"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Phone number is Camden Council main switchboard — confirm direct library numbers and that all four sites still run a tech-help service before pilot.",
+      "source": "https://www.camden.gov.uk/libraries"
+    },
+    {
+      "id": "camden-acl-digital-skills",
+      "name": "Camden Adult Community Learning — Digital Skills",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["skills", "id-and-accounts"],
+      "what_they_do_plain": "Free, longer courses to build real digital confidence: using a smartphone, basic computer skills, online safety, getting a job online, getting started with Word/Google Docs. Most courses are free if you live in Camden or are on certain benefits.",
+      "what_to_expect": "Pick a course on the website or call. Most courses are weekly group sessions over a few weeks. Friendly tutors. You'll get a free certificate at the end.",
+      "eligibility_plain": "Adults 19+ (some courses 16+). Free if you live, work, or study in Camden, or if you're on Universal Credit, JSA, or low income. Care leavers under 25 usually qualify for free courses.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": true,
+      "open_to_under_18": false,
+      "locations": [
+        {
+          "name": "Camden ACL — Crowndale Centre",
+          "address": "218 Eversholt Street",
+          "postcode": "NW1 1BD",
+          "lat": 51.5354,
+          "lon": -0.1377,
+          "region": "centre",
+          "hours_plain": "Term-time, varies by course"
+        }
+      ],
+      "contact": {
+        "phone": "020 7974 2148",
+        "whatsapp": null,
+        "website": "https://acl.camden.gov.uk",
+        "email": "acl@camden.gov.uk"
+      },
+      "tags_situation": ["needs-skills", "needs-email", "needs-uc-account"],
+      "tags_safe_for": [],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Confirm current term enrolment dates and that care-leaver fee waiver applies under 25.",
+      "source": "https://acl.camden.gov.uk"
+    },
+    {
+      "id": "new-horizon-youth-centre",
+      "name": "New Horizon Youth Centre",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["devices", "wifi", "skills", "id-and-accounts"],
+      "what_they_do_plain": "Day centre for 16–24-year-olds in or near homelessness. You can charge your phone, use Wi-Fi and computers, get a hot meal, get help with ID and Universal Credit, and talk to a worker about anything.",
+      "what_to_expect": "Drop in any weekday morning. Sign in at reception. First visit takes 30–60 minutes — they'll ask a few questions to understand what's going on and connect you with the right worker.",
+      "eligibility_plain": "Aged 16–24, in Greater London, and homeless or at risk of homelessness — including sofa-surfing or just-moved-out-of-care. You don't need an address or ID to come in.",
+      "free": true,
+      "drop_in": true,
+      "appointment_required": false,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "New Horizon Youth Centre",
+          "address": "68 Chalton Street",
+          "postcode": "NW1 1JR",
+          "lat": 51.5295,
+          "lon": -0.1310,
+          "region": "centre",
+          "hours_plain": "Mon–Fri 09:30–13:00 (drop-in)"
+        }
+      ],
+      "contact": {
+        "phone": "020 7388 5560",
+        "whatsapp": null,
+        "website": "https://nhyouthcentre.org.uk",
+        "email": "info@nhyouthcentre.org.uk"
+      },
+      "tags_situation": ["no-device", "no-data", "needs-skills", "needs-email", "needs-uc-account", "needs-id"],
+      "tags_safe_for": ["under-18", "no-id", "no-fixed-address", "lgbtq-friendly"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Confirm current drop-in days/times — these change. Confirm whether digital-help worker is available daily or by appointment.",
+      "source": "https://nhyouthcentre.org.uk"
+    },
+    {
+      "id": "centrepoint-digital",
+      "name": "Centrepoint — Digital Inclusion",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["devices", "data", "skills"],
+      "what_they_do_plain": "If you're a young person who's been homeless and you stay or have stayed at Centrepoint, they can help with a phone, data, and the digital skills you need to apply for jobs, housing, or college.",
+      "what_to_expect": "If you're already a Centrepoint resident or in their support, ask your worker about the digital programme. If you're not, the helpline can tell you whether you're eligible and what to do next.",
+      "eligibility_plain": "Aged 16–25 and homeless or at risk of homelessness. You don't have to live in a Centrepoint hostel to get phone/helpline support.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": true,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "Centrepoint Camberwell House (head office for referrals)",
+          "address": "Central House, 25 Camperdown Street",
+          "postcode": "E1 8DZ",
+          "lat": 51.5132,
+          "lon": -0.0712,
+          "region": "out-of-borough",
+          "hours_plain": "Helpline Mon–Fri 09:00–17:00"
+        }
+      ],
+      "contact": {
+        "phone": "0808 800 0661",
+        "whatsapp": null,
+        "website": "https://centrepoint.org.uk/young-people/get-help-now/centrepoint-helpline",
+        "email": null
+      },
+      "tags_situation": ["no-device", "no-data", "needs-skills"],
+      "tags_safe_for": ["under-18", "no-id", "no-fixed-address"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Helpline number is national Centrepoint Helpline — confirm it's the right entry point for digital support specifically.",
+      "source": "https://centrepoint.org.uk"
+    },
+    {
+      "id": "shp-camden",
+      "name": "Single Homeless Project (SHP) — Camden Floating Support",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["skills", "id-and-accounts"],
+      "what_they_do_plain": "If you're a Camden resident at risk of losing your home, an SHP worker can come to you and help with everything that's tangled up — including getting set up online for Universal Credit, banking, and applications.",
+      "what_to_expect": "Referral usually comes through Camden Council or another support service. Once referred, an SHP worker will meet you at home or somewhere you choose; sessions are weekly for as long as you need.",
+      "eligibility_plain": "Camden resident, 18+, at risk of homelessness or struggling to keep your tenancy. Care leavers usually qualify.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": true,
+      "open_to_under_18": false,
+      "locations": [
+        {
+          "name": "SHP Camden (referrals via Camden Council)",
+          "address": "Various across Camden",
+          "postcode": "NW1",
+          "lat": 51.5392,
+          "lon": -0.1426,
+          "region": "north",
+          "hours_plain": "By appointment, Mon–Fri"
+        }
+      ],
+      "contact": {
+        "phone": "020 7520 8660",
+        "whatsapp": null,
+        "website": "https://www.shp.org.uk",
+        "email": null
+      },
+      "tags_situation": ["needs-skills", "needs-email", "needs-uc-account"],
+      "tags_safe_for": ["no-id", "no-fixed-address"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Confirm current Camden contract still active and the right phone number for self-referral.",
+      "source": "https://www.shp.org.uk"
+    },
+    {
+      "id": "catch22-camden-care-leavers",
+      "name": "Catch22 — Camden Care Leavers Service",
+      "verification_status": "draft",
+      "category": "digital",
+      "subcategories": ["skills", "id-and-accounts"],
+      "what_they_do_plain": "If you're a Camden care leaver, your Personal Advisor may already work for Catch22. They can help you get a phone, sort an email and bank account, and learn what you need online to keep on top of housing and money.",
+      "what_to_expect": "If you have a Personal Advisor, ask them. If you don't know who yours is, call Camden Council Leaving Care or Catch22 directly — they'll match you up.",
+      "eligibility_plain": "Camden care leaver, usually 16–25.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": true,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "Catch22 Camden (location confirmed at referral)",
+          "address": "Confirm at referral",
+          "postcode": "NW1",
+          "lat": 51.5392,
+          "lon": -0.1426,
+          "region": "centre",
+          "hours_plain": "Mon–Fri 09:00–17:00"
+        }
+      ],
+      "contact": {
+        "phone": "020 ____ ____",
+        "whatsapp": null,
+        "website": "https://www.catch-22.org.uk",
+        "email": null
+      },
+      "tags_situation": ["needs-skills", "needs-email", "needs-uc-account", "needs-id"],
+      "tags_safe_for": ["under-18", "no-id", "no-fixed-address", "lgbtq-friendly"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Confirm whether Catch22 holds the Camden leaving-care contract at the time of pilot, and get the correct local phone number. As of writing this is uncertain.",
+      "source": "https://www.catch-22.org.uk"
+    },
+    {
+      "id": "citizens-advice-camden-uc",
+      "name": "Citizens Advice Camden — Help to Claim",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["skills", "id-and-accounts"],
+      "what_they_do_plain": "Free, confidential help to set up your Universal Credit account online and make your first claim. They'll sit with you through the form and help you upload ID, journal entries, and proof.",
+      "what_to_expect": "Phone the Help to Claim line first — most help is on the phone or online. If you need face-to-face, they'll book you in at a Camden office.",
+      "eligibility_plain": "Anyone making a new Universal Credit claim. Free.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": true,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "Citizens Advice Camden — Kentish Town",
+          "address": "Kingsgate Community Centre, 107 Kingsgate Road",
+          "postcode": "NW6 2JH",
+          "lat": 51.5462,
+          "lon": -0.1947,
+          "region": "north",
+          "hours_plain": "By appointment, Mon–Fri"
+        }
+      ],
+      "contact": {
+        "phone": "0800 144 8 444",
+        "whatsapp": null,
+        "website": "https://www.camdencabservice.org.uk",
+        "email": null
+      },
+      "tags_situation": ["needs-uc-account", "needs-skills"],
+      "tags_safe_for": ["under-18", "no-fixed-address", "lgbtq-friendly"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Confirm Help to Claim is still nationally funded (it has been at risk in past funding rounds) and the local Camden office address is current.",
+      "source": "https://www.camdencabservice.org.uk"
+    },
+    {
+      "id": "voluntary-action-camden",
+      "name": "Voluntary Action Camden — Find Local Help",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["skills"],
+      "what_they_do_plain": "Not a service themselves — a directory of every small charity and community group in Camden. Useful if the bigger services don't fit you and you want something local, cultural, or specific.",
+      "what_to_expect": "Search their site or call. They can point you to a community group near you that runs digital sessions, women-only groups, language-specific groups, etc.",
+      "eligibility_plain": "Anyone in Camden.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": false,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "VAC offices",
+          "address": "293-299 Kentish Town Road",
+          "postcode": "NW5 2TJ",
+          "lat": 51.5519,
+          "lon": -0.1426,
+          "region": "north",
+          "hours_plain": "Mon–Fri 09:00–17:00"
+        }
+      ],
+      "contact": {
+        "phone": "020 7284 6550",
+        "whatsapp": null,
+        "website": "https://vac.org.uk",
+        "email": "info@vac.org.uk"
+      },
+      "tags_situation": ["needs-skills"],
+      "tags_safe_for": ["under-18", "no-id", "no-fixed-address", "lgbtq-friendly"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Confirm address and phone — VAC has moved offices in the past.",
+      "source": "https://vac.org.uk"
+    },
+    {
+      "id": "drive-forward-foundation",
+      "name": "Drive Forward Foundation",
+      "verification_status": "needs-verification",
+      "category": "digital",
+      "subcategories": ["skills"],
+      "what_they_do_plain": "Career coaching for care leavers (16–29). They help with the digital side of getting work — CVs on Word, LinkedIn, online applications, video interviews — and run small group programmes.",
+      "what_to_expect": "Sign up on their site or by phone. You'll be matched with a coach for one-to-ones, and can join group programmes. Most sessions are online — they can lend you a laptop if you need one.",
+      "eligibility_plain": "Care leaver, aged 16–29, in London.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": true,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "Drive Forward Foundation (mostly online)",
+          "address": "Central London office",
+          "postcode": "EC2",
+          "lat": 51.5155,
+          "lon": -0.0922,
+          "region": "out-of-borough",
+          "hours_plain": "Mon–Fri 09:00–17:30"
+        }
+      ],
+      "contact": {
+        "phone": "020 7733 9624",
+        "whatsapp": null,
+        "website": "https://driveforwardfoundation.org",
+        "email": "info@driveforwardfoundation.org"
+      },
+      "tags_situation": ["no-device", "needs-skills"],
+      "tags_safe_for": ["under-18", "no-fixed-address", "lgbtq-friendly"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "Confirm laptop-loan programme is current and the upper age limit (has historically varied between 26 and 29).",
+      "source": "https://driveforwardfoundation.org"
+    },
+    {
+      "id": "camden-council-digital-inclusion",
+      "name": "Camden Council — Digital Inclusion Scheme",
+      "verification_status": "draft",
+      "category": "digital",
+      "subcategories": ["devices", "data"],
+      "what_they_do_plain": "Camden Council can help people on low incomes get a refurbished laptop or tablet, and free mobile data SIMs through the National Databank. Care leavers usually qualify automatically.",
+      "what_to_expect": "Ask your Personal Advisor, social worker, or any Camden Council frontline service to refer you. Devices are usually picked up from a library or community centre. Data SIMs come in the post or from libraries.",
+      "eligibility_plain": "Camden resident, on low income or benefits, including care leavers, asylum seekers, and people in supported accommodation.",
+      "free": true,
+      "drop_in": false,
+      "appointment_required": true,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "Pickup at any Camden library",
+          "address": "Multiple",
+          "postcode": "NW1",
+          "lat": 51.5392,
+          "lon": -0.1426,
+          "region": "centre",
+          "hours_plain": "Library hours"
+        }
+      ],
+      "contact": {
+        "phone": "020 7974 4444",
+        "whatsapp": null,
+        "website": "https://www.camden.gov.uk/digital-inclusion",
+        "email": null
+      },
+      "tags_situation": ["no-device", "no-data"],
+      "tags_safe_for": ["under-18", "no-id", "no-fixed-address", "lgbtq-friendly"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "DRAFT — confirm exact name of current Camden Council scheme, eligibility criteria, and referral route. National Databank participation can change year to year.",
+      "source": "https://www.camden.gov.uk"
+    },
+    {
+      "id": "good-things-online-centres",
+      "name": "Good Things Foundation — Online Centres Network (Camden delivery partners)",
+      "verification_status": "draft",
+      "category": "digital",
+      "subcategories": ["devices", "data", "skills"],
+      "what_they_do_plain": "Good Things Foundation coordinates a network of community 'Online Centres' across the UK. In Camden, you can find your nearest one and get free SIM cards (National Databank), free devices (National Device Bank), and one-to-one help.",
+      "what_to_expect": "Use the website to find your nearest Online Centre — these are libraries, churches, community centres, etc. Walk in or call ahead. Each centre runs differently but all offer some mix of help.",
+      "eligibility_plain": "Varies by centre. Most are open to anyone. Some target specific groups (women, refugees, over-50s).",
+      "free": true,
+      "drop_in": true,
+      "appointment_required": false,
+      "open_to_under_18": true,
+      "locations": [
+        {
+          "name": "Find your nearest centre online",
+          "address": "Various",
+          "postcode": "NW1",
+          "lat": 51.5392,
+          "lon": -0.1426,
+          "region": "centre",
+          "hours_plain": "Varies by centre"
+        }
+      ],
+      "contact": {
+        "phone": null,
+        "whatsapp": null,
+        "website": "https://www.goodthingsfoundation.org/national-databank",
+        "email": null
+      },
+      "tags_situation": ["no-device", "no-data", "needs-skills"],
+      "tags_safe_for": ["under-18", "no-id", "no-fixed-address", "lgbtq-friendly"],
+      "last_verified": "2026-04-28",
+      "verification_notes": "DRAFT — confirm current Camden delivery partners. Pull a curated shortlist of 3–5 specific Camden Online Centres rather than linking to the national finder.",
+      "source": "https://www.goodthingsfoundation.org"
+    }
+  ]
+}

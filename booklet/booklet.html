@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <title>Camden Digital Lifeline — Booklet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* ----------------------------------------------------------------
+       Camden Digital Lifeline — print booklet (A5)
+       Open this file in Chrome and File → Print → Save as PDF (A5).
+       ---------------------------------------------------------------- */
+
+    @page {
+      size: A5;
+      margin: 12mm 12mm 14mm 12mm;
+    }
+
+    :root {
+      --c-bg:        #fbf7f1;
+      --c-surface:   #ffffff;
+      --c-ink:       #1f2a44;
+      --c-ink-soft:  #4b5773;
+      --c-muted:     #6b7280;
+      --c-accent:    #d97757;
+      --c-good:      #2f6d4f;
+      --c-warn:      #8a4b00;
+      --c-divider:   #e6dfd2;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--c-bg);
+      color: var(--c-ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.45;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* On screen, frame the booklet so the user can see what each page will look like */
+    body { padding: 16px; }
+    @media print { body { padding: 0; background: #fff; } }
+
+    .page {
+      width: 148mm;
+      min-height: 210mm;
+      padding: 12mm;
+      background: var(--c-bg);
+      margin: 0 auto 16px;
+      page-break-after: always;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    @media print {
+      .page {
+        margin: 0;
+        box-shadow: none;
+        padding: 0;
+        width: auto;
+        min-height: auto;
+      }
+    }
+    .page:last-child { page-break-after: auto; }
+
+    h1 { font-size: 22pt; line-height: 1.1; margin: 0 0 8mm; letter-spacing: -0.01em; }
+    h2 { font-size: 16pt; margin: 0 0 4mm; letter-spacing: -0.01em; }
+    h3 { font-size: 11pt; margin: 0 0 2mm; color: var(--c-ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+    p  { margin: 0 0 4mm; }
+    a  { color: inherit; text-decoration: underline; }
+
+    .muted { color: var(--c-ink-soft); }
+    .small { font-size: 9pt; }
+
+    /* ---- Cover ---- */
+    .cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 186mm;
+    }
+    .cover .mark {
+      width: 18mm; height: 18mm;
+      border-radius: 50%;
+      background: var(--c-accent);
+      margin-bottom: 8mm;
+    }
+    .cover h1 { font-size: 28pt; line-height: 1.05; margin-bottom: 0; }
+    .cover .lede { font-size: 13pt; color: var(--c-ink-soft); margin-top: 6mm; }
+    .cover .qr-block {
+      display: flex; align-items: center; gap: 8mm;
+      padding: 6mm;
+      background: var(--c-surface);
+      border: 1px solid var(--c-divider);
+      border-radius: 8mm;
+    }
+    .cover .qr-block img { width: 36mm; height: 36mm; }
+    .cover .qr-block p { margin: 0; font-size: 11pt; }
+    .cover .qr-block strong { font-size: 12pt; }
+
+    .footer-meta {
+      font-size: 8pt; color: var(--c-muted);
+      margin-top: 6mm;
+    }
+
+    /* ---- Inside cover (how to use) ---- */
+    .how-to ul { padding-left: 5mm; margin: 0 0 4mm; }
+    .how-to li { margin-bottom: 3mm; }
+    .reassure {
+      margin-top: 8mm;
+      padding: 5mm;
+      background: var(--c-surface);
+      border-left: 3pt solid var(--c-good);
+      border-radius: 0 4mm 4mm 0;
+    }
+
+    /* ---- Org card pages ---- */
+    .org-page {
+      display: flex; flex-direction: column;
+      min-height: 186mm;
+    }
+    .org-header { display: flex; gap: 6mm; align-items: flex-start; }
+    .org-header .text { flex: 1; }
+    .org-header .qr { width: 34mm; flex-shrink: 0; text-align: center; }
+    .org-header .qr img { width: 30mm; height: 30mm; display: block; margin: 0 auto 1mm; }
+    .org-header .qr p { font-size: 8pt; color: var(--c-muted); margin: 0; line-height: 1.2; }
+
+    .org-name { font-size: 18pt; line-height: 1.1; margin: 0 0 3mm; }
+    .org-summary { font-size: 11pt; }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 2mm; margin: 3mm 0 5mm; }
+    .chip {
+      font-size: 8pt; font-weight: 600;
+      padding: 1mm 3mm;
+      border-radius: 999px;
+      background: var(--c-surface);
+      border: 1px solid var(--c-divider);
+    }
+    .chip.good { background: #ecf5ef; color: var(--c-good); border-color: #cfe6d8; }
+    .chip.warn { background: #fbf0e1; color: var(--c-warn); border-color: #efd9b8; }
+
+    .section { margin: 0 0 5mm; }
+    .section h3 { margin-bottom: 1.5mm; }
+    .section p  { margin: 0; }
+
+    .locations { display: grid; gap: 3mm; }
+    .location {
+      padding: 3mm 4mm;
+      background: var(--c-surface);
+      border: 1px solid var(--c-divider);
+      border-radius: 3mm;
+    }
+    .location .name { font-weight: 700; font-size: 10pt; margin: 0 0 1mm; }
+    .location .meta { font-size: 9pt; color: var(--c-ink-soft); margin: 0; }
+
+    .org-foot {
+      margin-top: auto;
+      padding-top: 4mm;
+      border-top: 1pt dashed var(--c-divider);
+      font-size: 8pt;
+      color: var(--c-muted);
+      display: flex; justify-content: space-between;
+    }
+
+    .verify-warn {
+      font-size: 9pt;
+      background: #fbe9e9;
+      color: #7a1f1f;
+      border: 1px solid #f4caca;
+      border-radius: 3mm;
+      padding: 2mm 3mm;
+      margin: 0 0 4mm;
+    }
+
+    /* ---- Back cover ---- */
+    .back {
+      display: flex; flex-direction: column; justify-content: center;
+      align-items: center; text-align: center;
+      min-height: 186mm;
+    }
+    .back .qr-big { width: 60mm; height: 60mm; margin: 8mm 0; }
+    .back h1 { font-size: 20pt; margin-bottom: 2mm; }
+    .back .pitch { font-size: 12pt; color: var(--c-ink-soft); max-width: 100mm; }
+
+    /* ---- Loading state (only visible while JS is rendering) ---- */
+    .loading {
+      text-align: center; padding: 40mm 0;
+      color: var(--c-muted);
+    }
+    .error {
+      background: #fbe9e9; color: #7a1f1f;
+      padding: 5mm; border-radius: 3mm;
+      margin: 10mm;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="loading">Loading booklet…</div>
+  </div>
+
+  <script type="module">
+    // Render the booklet from data/orgs.json. Each page is a .page div.
+    // To print: open in Chrome → File → Print → Destination "Save as PDF" → Paper size "A5".
+
+    async function loadData() {
+      const res = await fetch("../data/orgs.json");
+      if (!res.ok) throw new Error(`HTTP ${res.status} loading data/orgs.json`);
+      return (await res.json()).orgs;
+    }
+
+    function el(tag, attrs = {}, ...children) {
+      const node = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs)) {
+        if (v == null || v === false) continue;
+        if (k === "class") node.className = v;
+        else node.setAttribute(k, v);
+      }
+      for (const c of children.flat()) {
+        if (c == null || c === false) continue;
+        node.append(c instanceof Node ? c : document.createTextNode(String(c)));
+      }
+      return node;
+    }
+
+    function chip(text, variant = "") { return el("span", { class: `chip ${variant}` }, text); }
+
+    function coverPage() {
+      return el("div", { class: "page cover" },
+        el("div", {},
+          el("div", { class: "mark" }),
+          el("h1", {}, "Camden — your starting points"),
+          el("p", { class: "lede" },
+            "You don't have to do this in order. Pick what's lightest first."
+          )
+        ),
+        el("div", { class: "qr-block" },
+          el("img", { src: "qrs/_master.svg", alt: "Scan to start" }),
+          el("p", {},
+            el("strong", {}, "Scan to start. "),
+            "Answer 4 quick questions, see the best 3 places for you. Nothing is saved."
+          )
+        ),
+        el("p", { class: "footer-meta" },
+          "Workshop prototype · Phoenix Court / Bloomsbury Football · April 2026"
+        )
+      );
+    }
+
+    function howToPage() {
+      return el("div", { class: "page how-to" },
+        el("h2", {}, "How to use this"),
+        el("p", {},
+          "This booklet is yours to keep. It has 11 places in or near Camden ",
+          "that can help you get online, get a phone, sort an email, or set up ",
+          "Universal Credit. All free."
+        ),
+        el("ul", {},
+          el("li", {}, "Scan the QR on the back cover to answer 4 quick questions and see the 3 places that fit you best."),
+          el("li", {}, "Or just flip through and pick somewhere that sounds OK."),
+          el("li", {}, "Each page has a QR you can scan straight to that place's full info — opening times, what to bring, what to expect."),
+          el("li", {}, "Drop-ins (no appointment) are marked. Start there if today's the day.")
+        ),
+        el("div", { class: "reassure" },
+          el("p", {}, el("strong", {}, "Nothing tracks you.")),
+          el("p", { class: "small muted" },
+            "The website you scan into doesn't ask for your name, your email, or any sign-in. Your answers stay on your phone."
+          )
+        )
+      );
+    }
+
+    function orgPage(org) {
+      const wrap = el("div", { class: "page org-page" });
+
+      const header = el("div", { class: "org-header" });
+      const text = el("div", { class: "text" });
+      text.appendChild(el("h2", { class: "org-name" }, org.name));
+
+      const chips = el("div", { class: "chips" });
+      if (org.drop_in) chips.appendChild(chip("Drop-in", "good"));
+      if (!org.drop_in && org.appointment_required) chips.appendChild(chip("By appointment"));
+      if (org.free) chips.appendChild(chip("Free", "good"));
+      if (org.open_to_under_18) chips.appendChild(chip("Under 18 OK", "good"));
+      if (org.tags_safe_for?.includes("no-id")) chips.appendChild(chip("No ID needed", "good"));
+      if (org.verification_status === "draft") chips.appendChild(chip("Draft entry", "warn"));
+      if (org.verification_status === "needs-verification") chips.appendChild(chip("Needs verifying", "warn"));
+      text.appendChild(chips);
+
+      header.appendChild(text);
+      header.appendChild(
+        el("div", { class: "qr" },
+          el("img", { src: `qrs/${org.id}.svg`, alt: `Scan for ${org.name}` }),
+          el("p", {}, "Scan for full info")
+        )
+      );
+      wrap.appendChild(header);
+
+      if (org.verification_status !== "verified") {
+        wrap.appendChild(el("div", { class: "verify-warn" },
+          "This entry is a draft. Confirm details before going."
+        ));
+      }
+
+      wrap.appendChild(el("p", { class: "org-summary" }, org.what_they_do_plain));
+
+      wrap.appendChild(el("div", { class: "section" },
+        el("h3", {}, "What to expect"),
+        el("p", {}, org.what_to_expect)
+      ));
+
+      wrap.appendChild(el("div", { class: "section" },
+        el("h3", {}, "Who's it for?"),
+        el("p", {}, org.eligibility_plain)
+      ));
+
+      if (org.locations?.length) {
+        const locWrap = el("div", { class: "section" }, el("h3", {}, "Where"));
+        const locs = el("div", { class: "locations" });
+        org.locations.slice(0, 3).forEach((loc) => {
+          const card = el("div", { class: "location" });
+          card.appendChild(el("p", { class: "name" }, loc.name));
+          if (loc.address) card.appendChild(el("p", { class: "meta" }, `${loc.address}, ${loc.postcode}`));
+          if (loc.hours_plain) card.appendChild(el("p", { class: "meta" }, loc.hours_plain));
+          locs.appendChild(card);
+        });
+        locWrap.appendChild(locs);
+        wrap.appendChild(locWrap);
+      }
+
+      const foot = el("div", { class: "org-foot" },
+        el("span", {}, org.contact?.phone ? `☎ ${org.contact.phone}` : ""),
+        el("span", {}, `Last checked: ${org.last_verified || "—"}`)
+      );
+      wrap.appendChild(foot);
+
+      return wrap;
+    }
+
+    function backPage() {
+      return el("div", { class: "page back" },
+        el("h1", {}, "Start here."),
+        el("p", { class: "pitch" },
+          "Scan this. Answer 4 quick questions. We'll show you the 3 places nearest to you, that fit your situation."
+        ),
+        el("img", { class: "qr-big", src: "qrs/_master.svg", alt: "Scan to start" }),
+        el("p", { class: "small muted" }, "Free. No sign-up. Nothing is saved.")
+      );
+    }
+
+    async function render() {
+      const root = document.getElementById("root");
+      try {
+        const orgs = await loadData();
+        root.replaceChildren(); // clear loading
+        root.appendChild(coverPage());
+        root.appendChild(howToPage());
+        orgs.forEach((o) => root.appendChild(orgPage(o)));
+        root.appendChild(backPage());
+        document.title = `Camden Digital Lifeline — ${orgs.length + 3} pages`;
+      } catch (err) {
+        root.innerHTML = "";
+        const e = el("div", { class: "error" },
+          el("p", {}, el("strong", {}, "Could not load the booklet data.")),
+          el("p", {}, err.message),
+          el("p", { class: "small" }, "Run `npm run serve` from the project root, then open http://localhost:3000/booklet/booklet.html")
+        );
+        root.appendChild(e);
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>

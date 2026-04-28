@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Camden Digital Lifeline — find the right place near you for free internet, a phone, an email, or learning the basics. Nothing is saved.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1f2a44">
+  <title>Camden Digital Lifeline</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <a href="#welcome" class="logo" aria-label="Camden Digital Lifeline — home">
+      <span class="logo-mark" aria-hidden="true">●</span>
+      Camden Digital Lifeline
+    </a>
+    <a href="https://www.bbc.co.uk/news" class="quick-leave" rel="noopener noreferrer" aria-label="Quick leave — opens BBC News">Quick leave</a>
+  </header>
+
+  <main id="main" role="main">
+
+    <!-- Welcome view -->
+    <section id="view-welcome" class="view" data-view="welcome" aria-labelledby="welcome-h">
+      <div class="hero">
+        <p class="eyebrow">Camden, London</p>
+        <h1 id="welcome-h">You don't have to figure this out alone.</h1>
+        <p class="lede">A few quick questions, and we'll point you to two or three places that fit <em>your</em> situation. Free, no sign-up, nothing is saved.</p>
+        <div class="cta-row">
+          <a href="#triage" class="btn btn-primary" data-action="start-triage">Start — 4 quick questions</a>
+          <a href="#org/camden-libraries-tech-help" class="btn btn-link">Just show me a list</a>
+        </div>
+        <ul class="reassure">
+          <li>Takes about 30 seconds.</li>
+          <li>Nothing you tap leaves your phone.</li>
+          <li>You can close this any time. The "Quick leave" button takes you to BBC News.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Triage view -->
+    <section id="view-triage" class="view hidden" data-view="triage" aria-labelledby="triage-h">
+      <h1 id="triage-h" class="sr-only">Quick questions</h1>
+      <div class="progress" aria-hidden="true">
+        <span class="progress-step" data-step="1"></span>
+        <span class="progress-step" data-step="2"></span>
+        <span class="progress-step" data-step="3"></span>
+        <span class="progress-step" data-step="4"></span>
+      </div>
+      <div id="triage-question" class="question-card" aria-live="polite"></div>
+      <div class="triage-nav">
+        <button type="button" class="btn btn-link" data-action="triage-back">Back</button>
+        <button type="button" class="btn btn-link" data-action="triage-skip">Skip this question</button>
+      </div>
+    </section>
+
+    <!-- Results view -->
+    <section id="view-results" class="view hidden" data-view="results" aria-labelledby="results-h">
+      <h1 id="results-h">Three places that fit you</h1>
+      <p class="results-intro" id="results-intro"></p>
+      <ol id="results-list" class="results-list"></ol>
+      <div class="results-actions">
+        <button type="button" class="btn btn-secondary" data-action="screenshot-help">Save these — how?</button>
+        <a href="#triage" class="btn btn-link" data-action="restart">Start over</a>
+      </div>
+      <details class="results-other">
+        <summary>Show me the other places</summary>
+        <ol id="results-rest" class="results-list compact"></ol>
+      </details>
+    </section>
+
+    <!-- Single org view (for QR deep-links) -->
+    <section id="view-org" class="view hidden" data-view="org" aria-labelledby="org-h">
+      <a href="#welcome" class="back-link">← All places</a>
+      <article id="org-detail"></article>
+    </section>
+
+    <!-- Safety view -->
+    <section id="view-safety" class="view hidden" data-view="safety" aria-labelledby="safety-h">
+      <h1 id="safety-h">If you're in danger right now</h1>
+      <ul class="safety-list">
+        <li><strong>In immediate danger:</strong> <a href="tel:999">Call 999</a></li>
+        <li><strong>Under 18 and need someone to talk to:</strong> Childline <a href="tel:08001111">0800 1111</a></li>
+        <li><strong>You need somewhere to sleep tonight:</strong> Streetlink <a href="tel:03003330180">0300 333 0180</a></li>
+        <li><strong>You're thinking about suicide:</strong> Samaritans <a href="tel:116123">116 123</a> (free, 24/7)</li>
+        <li><strong>Camden out-of-hours social care:</strong> <a href="tel:02079744444">020 7974 4444</a></li>
+      </ul>
+      <a href="#welcome" class="back-link">← Back</a>
+    </section>
+
+    <!-- Loading + error states -->
+    <div id="loading" class="loading" role="status" aria-live="polite">Loading…</div>
+    <div id="error" class="error hidden" role="alert"></div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <a href="#safety" class="safety-link">In danger right now? Tap here.</a>
+    <p class="footer-meta">Prototype — last updated April 2026. Built for a Phoenix Court / Bloomsbury Football workshop. Not for distribution.</p>
+  </footer>
+
+  <!-- Modal: how to save -->
+  <dialog id="save-modal" aria-labelledby="save-h">
+    <h2 id="save-h">Saving your places</h2>
+    <p>Nothing is saved on a server. Two easy ways to keep these:</p>
+    <ol>
+      <li><strong>Take a screenshot.</strong> On most phones: press the side button + volume-up at the same time.</li>
+      <li><strong>Send the page to yourself on WhatsApp.</strong> Tap your browser's share button, then "WhatsApp", then send to your own number.</li>
+    </ol>
+    <button type="button" class="btn btn-primary" data-action="close-modal">OK</button>
+  </dialog>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
