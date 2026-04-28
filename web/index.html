@@ -30,7 +30,7 @@
         <p class="lede">A few quick questions, and we'll point you to two or three places that fit <em>your</em> situation. Free, no sign-up, nothing is saved.</p>
         <div class="cta-row">
           <a href="#triage" class="btn btn-primary" data-action="start-triage">Start — 4 quick questions</a>
-          <a href="#org/camden-libraries-tech-help" class="btn btn-link">Just show me a list</a>
+          <a href="#all" class="btn btn-link">Just show me the full list</a>
         </div>
         <ul class="reassure">
           <li>Takes about 30 seconds.</li>
@@ -71,9 +71,17 @@
       </details>
     </section>
 
+    <!-- Full list view (for "show me the list" link) -->
+    <section id="view-all" class="view hidden" data-view="all" aria-labelledby="all-h">
+      <a href="#welcome" class="back-link">← Back</a>
+      <h1 id="all-h">All places</h1>
+      <p class="results-intro">Free Camden services for getting online, getting a phone, sorting an email, or learning the basics. Tap one for full info.</p>
+      <ol id="all-list" class="results-list"></ol>
+    </section>
+
     <!-- Single org view (for QR deep-links) -->
     <section id="view-org" class="view hidden" data-view="org" aria-labelledby="org-h">
-      <a href="#welcome" class="back-link">← All places</a>
+      <a href="#all" class="back-link">← All places</a>
       <article id="org-detail"></article>
     </section>
 

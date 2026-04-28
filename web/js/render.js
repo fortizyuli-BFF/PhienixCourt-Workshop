@@ -158,7 +158,7 @@ function renderOrgCard(org, { reasons = [], compact = false } = {}) {
     const firstLoc = org.locations?.[0];
     if (firstLoc?.postcode) {
       const q = encodeURIComponent(`${firstLoc.address || ""} ${firstLoc.postcode}`.trim());
-      actions.appendChild(el("a", { class: "btn btn-link", href: `https://maps.apple.com/?q=${q}`, target: "_blank", rel: "noopener" }, "Open in Maps"));
+      actions.appendChild(el("a", { class: "btn btn-link", href: `https://www.google.com/maps/search/?api=1&query=${q}`, target: "_blank", rel: "noopener" }, "Open in Maps"));
     }
     if (org.contact?.website) {
       actions.appendChild(el("a", { class: "btn btn-link", href: org.contact.website, target: "_blank", rel: "noopener" }, "Website"));
@@ -177,6 +177,22 @@ function renderOrgCard(org, { reasons = [], compact = false } = {}) {
 
 function chip(text, variant = "") { return el("span", { class: `chip ${variant}` }, text); }
 function digits(s) { return String(s).replace(/[^\d+]/g, ""); }
+
+/* --------------------------------------------------------------------------
+   Full list (when the user picks "show me the full list" from welcome)
+   -------------------------------------------------------------------------- */
+
+export function renderAllList(listEl, orgs) {
+  clear(listEl);
+  // Sort drop-ins first, then alphabetical, so the easiest entry points lead.
+  const sorted = [...orgs].sort((a, b) => {
+    if (a.drop_in !== b.drop_in) return a.drop_in ? -1 : 1;
+    return a.name.localeCompare(b.name);
+  });
+  sorted.forEach((org) => {
+    listEl.appendChild(renderOrgCard(org, { compact: false }));
+  });
+}
 
 /* --------------------------------------------------------------------------
    Single org detail (deep-link from booklet QR)
@@ -237,6 +253,14 @@ export function renderOrgDetail(container, org) {
     actions.appendChild(el("a", { class: "btn btn-secondary", href: org.contact.website, target: "_blank", rel: "noopener" }, "Website"));
   }
   container.appendChild(actions);
+
+  // Share QR — same code as the booklet, so a young person can show the screen
+  // to a friend's phone and share the place without typing.
+  container.appendChild(el("section", { class: "detail-block share-block" },
+    el("h2", {}, "Show this to a friend"),
+    el("p", { class: "share-caption" }, "They can scan this with their phone camera to open the same page."),
+    el("img", { class: "share-qr", src: `../booklet/qrs/${org.id}.svg`, alt: `QR code linking to ${org.name}` })
+  ));
 
   // Last verified
   container.appendChild(el("p", { class: "org-meta" },

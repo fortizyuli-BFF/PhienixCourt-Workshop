@@ -7,10 +7,11 @@ import {
   renderTriageQuestion,
   renderProgress,
   renderResults,
-  renderOrgDetail
+  renderOrgDetail,
+  renderAllList
 } from "./render.js";
 
-const VIEWS = ["welcome", "triage", "results", "org", "safety"];
+const VIEWS = ["welcome", "triage", "results", "org", "safety", "all"];
 
 const state = {
   orgs: [],
@@ -84,6 +85,12 @@ function handleRoute() {
     const org = state.orgs.find((o) => o.id === param);
     showView("org");
     renderOrgDetail($("#org-detail"), org);
+    return;
+  }
+
+  if (view === "all") {
+    showView("all");
+    renderAllList($("#all-list"), state.orgs);
     return;
   }
 
