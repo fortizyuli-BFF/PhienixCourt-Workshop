@@ -1,15 +1,15 @@
 // Camden Digital Lifeline — entry point.
 // Wires routing, state, and view rendering together.
 
-import { triageQuestions } from "./data.js";
-import { rankOrgs } from "./match.js";
+import { triageQuestions } from "./data.js?v=2";
+import { rankOrgs } from "./match.js?v=2";
 import {
   renderTriageQuestion,
   renderProgress,
   renderResults,
   renderOrgDetail,
   renderAllList
-} from "./render.js";
+} from "./render.js?v=2";
 
 const VIEWS = ["welcome", "triage", "results", "org", "safety", "all"];
 

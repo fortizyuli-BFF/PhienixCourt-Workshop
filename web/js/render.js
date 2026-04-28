@@ -2,7 +2,7 @@
 // Kept dependency-free; uses a tiny `el` helper for safe text/attr handling
 // (no innerHTML with user data).
 
-import { triageQuestions } from "./data.js";
+import { triageQuestions } from "./data.js?v=2";
 
 /* --------------------------------------------------------------------------
    tiny DOM helpers (no innerHTML to keep XSS-safe even though all input is
